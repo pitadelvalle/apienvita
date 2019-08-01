@@ -16,3 +16,25 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::resource('asociaciones' , 'AsociacioneController');
+
+Route::resource('noticias' , 'NoticiaController');
+
+Route::get('/noticias','NoticiaController@index');
+
+Route::post('/addimage','NoticiaController@store')->name('addimage');
+
+Route::get('noticiaspage' ,'NoticiaController@display');
+
+Route::get('/edit/{id}','NoticiaController@edit');
+
+Route::put('/update/{id}','NoticiaController@update');
+
+Route::get('/delete/{id}','NoticiaController@delete');
+
+Route::resource('emergencias' , 'EmergenciaController');
+
+Route::resource('ayudas' , 'AyudaController');
+
+Route::resource('vivos' , 'VivoController');

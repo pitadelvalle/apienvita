@@ -16,7 +16,7 @@ class CreateEmergenciasTable extends Migration
         Schema::create('emergencias', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
-            $table->('imagen');
+            $table->image();
             $table->string('title');
             $table->text('descripcion');
         });

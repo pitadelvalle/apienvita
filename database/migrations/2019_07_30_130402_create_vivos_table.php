@@ -17,7 +17,7 @@ class CreateVivosTable extends Migration
             $table->bigIncrements('id');
             $table->timestamps();
             $table->string('title');
-            $table->('imagen');
+            $table->image();
             $table->text('descripcion');
         });
     }
