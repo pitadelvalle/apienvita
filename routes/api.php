@@ -19,19 +19,19 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::resource('asociaciones' , 'AsociacioneController');
 
-Route::resource('noticias' , 'NoticiaController');
+Route::resource('/public/api/noticias' , 'NoticiaController');
 
-Route::get('/noticias','NoticiaController@index');
+Route::get('/public/api/noticias','NoticiaController@index');
 
-Route::post('/addimage','NoticiaController@store')->name('addimage');
+Route::post('/public/api/addimage','NoticiaController@store')->name('addimage');
 
-Route::get('noticiaspage' ,'NoticiaController@display');
+Route::get('/public/api/noticiaspage' ,'NoticiaController@display');
 
-Route::get('/edit/{id}','NoticiaController@edit');
+Route::get('/public/api/edit/{id}','NoticiaController@edit');
 
-Route::put('/update/{id}','NoticiaController@update');
+Route::put('/public/api/update/{id}','NoticiaController@update');
 
-Route::get('/delete/{id}','NoticiaController@delete');
+Route::get('/public/api/delete/{id}','NoticiaController@delete');
 
 Route::resource('emergencias' , 'EmergenciaController');
 
